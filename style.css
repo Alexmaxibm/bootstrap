@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap');
+
+/* commons */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.btn {
+    background-color: #ffc800;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    width: 1320px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.padding-top-bottom {
+    padding: 80px;
+}
+
+.sf-grigio {
+    background-color: #f8f9fa;
+   
+}
+/* end commons */
+
+/* header */
+
+header {
+    background-image: url('img/header.jpg');
+    height: 750px;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+/* header-top */
+
+.header-top {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    background-color: #333134f0;  
+    z-index: 999;
+}
+
+.header-top .flex {
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 30px;
+}
+
+ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 14px;
+}
+
+nav a:link,
+nav a:visited {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #eac134;
+}
+
+
+/* header-main */
+
+.header-main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.subtitle {
+    font-family: "Roboto Slab", serif;
+    font-size: 40px;
+    font-style: italic;
+}
+
+.title {
+    font-size: 60px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 20px 0 60px 0;
+}
+
+
+/* main */
+
+/* services  */
+
+.services {
+    display: flex;
+}
+
+.icon i {
+    color: white;
+    font-size: 50px;
+    display: inline-block;
+    width: 60px;
+}
+
+.icon {
+    background-color: #ffc800;
+    border-radius: 50%;
+    display: inline-block;
+    padding: 30px;
+}
+
+.title-service {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 20px 0;
+
+}
+
+.desc-service {
+    color: #798188;
+    line-height: 26px;
+}
+
+.descrizione {
+    color: #798188;
+    font-style: italic;
+    margin: 10px 0 50px 0;
+}
+
+.box-margin {
+    margin: 0 30px;
+}
+
+/* portfolio */
+
+.box-portfolio {
+    width: calc(33.33% - 20px);
+}
+
+.portfolio-img {
+    position: relative;
+}
+
+.portfolio.flex {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.portfolio-img img {
+    width: 100%;
+    display: block;
+}
+
+.portfolio-desc {
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.layover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffc800c2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-img span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 44px;
+    color: white;
+    opacity: 0;
+}
+
+.portfolio-img:hover .layover,
+.portfolio-img:hover span {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* about */
+
+#about {
+    text-align: center;
+}
+
+ul.timeline {
+    position: relative;
+}
+
+/* quando scrivi content: ''; e non metti nulla all'interno 
+dei apici in sostanza lui crea con 1 px una riga.. dove in 
+alto parte top :0; e la posiziona a metà pagina da sinistra 
+con timeline creo contenuto al volo in una determinata posizione 
+before -prima , o after -dopo il paragrafo la frase ecc.. */
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 100%;
+    background-color: #e9ecef;
+}
+
+.timeline li {
+    position: relative;
+    margin-bottom: 80px;
+}
+
+.timeline-image img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    border: 5px solid #e9ecef;
+    width: 170px;
+    height: 170px;
+}
+
+.timeline-text {
+    width: 40%;
+}
+
+.timeline-yellow {
+    background-color:  #ffc800;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 5px solid #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeline li:last-child {
+    margin-bottom: 0;
+}
+
+.margin-left {
+    margin-left: 60%;
+}
+
+.timeline-text h3 {
+    font-size: 26px;
+    line-height: 1.8;
+}
+
+.timeline-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: grey;
+}
+
+/* end about  */
+
+/* team */
+
+.box-team img {
+    width: 50%;
+    border-radius: 50%;
+    border: 10px solid rgb(223, 213, 213);
+}
+
+.social-icons .icon {
+    background-color: black;
+    padding: 10px;
+    margin: 10px;
+}
+
+.social-icons .icon i {
+    font-size: 18px;
+    width: 20px;
+
+}
+
+.box-team h4 {
+    padding: 20px;
+    font-weight: normal;
+} 
+
+
+/* end team */
+/* contatti  */
+
+#contact {
+    background-color: #212529;;
+    background-image: url("https://startbootstrap.github.io/startbootstrap-agency/assets/img/map-image.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+}
+
+.box-contact {
+    width: 50%;
+}
+
+.form-control {
+    width: 90%;
+    padding: 20px;
+    font-size: 22px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* end contatti  */
+
+/* footer */
+
+.footer-bar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    color: black;
+} 
+      
+.footer-leftside:hover {
+    cursor: pointer;
+}
+/* end footer */
